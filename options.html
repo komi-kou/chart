@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIテキスト図解メーカー - 設定</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #2196F3;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 2px solid #e1f5fe;
+            padding-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+        
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #2196F3;
+            box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+        }
+        
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            line-height: 1.4;
+        }
+        
+        .help-text a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+        
+        .help-text a:hover {
+            text-decoration: underline;
+        }
+        
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        button:hover {
+            background: #1976D2;
+        }
+        
+        button:active {
+            transform: translateY(1px);
+        }
+        
+        .success {
+            background: #4CAF50;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            display: none;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .error {
+            background: #f44336;
+            color: white;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 15px;
+            display: none;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .info-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+            border-left: 4px solid #2196F3;
+        }
+        
+        .info-section h3 {
+            margin-top: 0;
+            color: #2196F3;
+        }
+        
+        .info-section ul {
+            margin: 10px 0 0 20px;
+            padding: 0;
+        }
+        
+        .info-section li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AIテキスト図解メーカー - 設定</h1>
+        
+        <div class="info-section">
+            <h3>📋 使用方法</h3>
+            <ul>
+                <li>ウェブページ上でテキストを選択</li>
+                <li>右クリックメニューから「AIテキスト図解メーカー」を選択</li>
+                <li>作成したい図の種類を選択（フローチャート、マインドマップ、シーケンス図）</li>
+                <li>AIが自動で図解を生成して表示</li>
+            </ul>
+        </div>
+        
+        <form id="settingsForm">
+            <div class="form-group">
+                <label for="apiKey">Google Gemini API キー *</label>
+                <input type="password" id="apiKey" placeholder="AIzaSyC-..." required>
+                <div class="help-text">
+                    <a href="https://makersuite.google.com/app/apikey" target="_blank">Google AI Studio</a>でAPIキーを取得してください。
+                    無料枠でも利用可能です。
+                </div>
+            </div>
+            
+            <button type="submit">設定を保存</button>
+            
+            <div id="successMessage" class="success">
+                設定が正常に保存されました！
+            </div>
+            
+            <div id="errorMessage" class="error">
+                設定の保存に失敗しました。
+            </div>
+        </form>
+    </div>
+    
+    <script src="options.js"></script>
+</body>
+</html>

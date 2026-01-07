@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "AIテキスト図解メーカー",
+  "version": "1.0",
+  "description": "選択したテキストをGemini APIを使って図解に変換するChrome拡張機能",
+  "permissions": [
+    "contextMenus",
+    "scripting",
+    "activeTab",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ]
+}
